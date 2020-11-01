@@ -1,62 +1,94 @@
-# discord-music-24-7
+# Zhycorp Music Bot
+> A dedicated open-source music bot for Zhycorp based on [Jukebox](https://github.com/Hazmi35/jukebox).
 
-A 24/7 music bot for Discord that pauses when nobody is listening.
-
-## Requirements
-
-To self-host this bot, you'll need the following:
-
-* [git](https://git-scm.com/)
-* [node.js](https://nodejs.org/en/) (Version 12 or higher is required.)
-* ffmpeg
-* A C/C++ compiler installed (Required to install `@discordjs/opus`.)
-
-**ffmpeg** should be installed by default on Linux and MacOS, in case it isn't, install it with your package manager. For Windows users, head over to [ffmpeg's official website](https://www.ffmpeg.org/download.html#build-windows) to download the binary which will need to be added to your **\$PATH**. If you don't know how to add folders to your **\$PATH**, check out this [guide](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/).
-
-## Installation
-
-In order to self-host this bot, first you'll need to clone this repository.
-
-```
-git clone https://github.com/moonstar-x/discord-music-24-7.git
-```
-
-Then, inside the `config` folder, rename the file *settings.json.example* to *settings.json* and edit the file with your own Discord Token, your Soundcloud Client ID (if you wish to use Soundcloud), the ID of the channel where the music should be played and finally, whether you want the music queue to be shuffled on bot startup.
-> * To see how to find these IDs, you can check out [this guide](<https://github.com/moonstar-x/discord-downtime-notifier/wiki/Getting-User,-Channel-and-Server-IDs>).
-> * If you don't have a Discord token yet, you can see a guide on how to get one [here](<https://github.com/moonstar-x/discord-downtime-notifier/wiki/Getting-a-Discord-Bot-Token>).
-> * If you don't know how to acquire your Soundcloud Client ID, check out [this guide](https://www.npmjs.com/package/soundcloud-downloader#client-id).
-
-Your file should look like this:
-
-```json
-{
-  "discord_token": "YOUR_DISCORD_TOKEN_HERE",
-  "soundcloud_client_id": "YOUR_SOUNDCLOUD_CLIENT_ID",
-  "channel_id": "1234567890",
-  "shuffle": true
-}
-```
-
-Install the dependencies:
-
-```
-npm install
-```
-
-You can now run your bot:
-
-```
-npm start
-```
+<a href="https://discord.gg/DxenCeV"><img src="https://img.shields.io/discord/332877090003091456?color=7289da&logo=discord&logoColor=white" alt="Discord server" /></a>
+<a href="https://discord.com/oauth2/authorize?client_id=690736793682968576&permissions=53857345&scope=bot"><img src="https://img.shields.io/static/v1?label=Invite%20Me&message=Disc%2011%230606&plastic&color=7289DA&logo=discord"></a>
+<a href="https://github.com/zhycorp/music-bot-example/actions?query=workflow%3A%22Node.js+CI%22"><img src="https://github.com/zhycorp/music-bot-example/workflows/Node.js%20CI/badge.svg" alt="Node.JS CI Status" /></a>
+<img src="https://badgen.net/badge/icon/typescript?icon=typescript&label">
+<img src="https://badgen.net/badge/jual/haram/red">
 
 ## Usage
 
-The bot will automatically start playing music in the configured channel, it will also automatically pause when nobody is listening to the music to save bandwidth.
+**Requires [Node.JS](https://nodejs.org) version v12 or above.**
 
-The music that is played is stored in the `queue.txt` inside the `data` folder. You can add the music you want the bot to play in this file. Any links must begin with `https://`, YouTube links must be from `youtube.com` and not from `youtu.be`.
+[Come here](https://github.com/zhycorp/disc-11#Glitch) if you want to use Glitch.com instead of localhost or [Heroku](https://heroku.com/deploy?template=https://github.com/zhycorp/disc-11/tree/master)
 
-This bot is designed to work only on one server at a time. Inviting your bot to multiple servers will yield unexpected behavior.
+1. Install [Node.JS](https://nodejs.org) and [Yarn (Optional)](https://yarnpkg.com)
+2. Rename `.env.schema` to `.env` and fill out the values (example on .env.example)
+3. Install dependencies as stated [here](https://github.com/zhycorp/disc-11#Installation) before you continue surfing
+4. Run `npm run build`, or `yarn run build` if you're using Yarn package manager
+5. Optional thing, prune devDependencies (this is good to save disk spaces):
+```shell script
+$ npm prune --production
+# or with yarn
+$ yarn install --production
+```
+6. Start it with `npm start` or `yarn start`, and you're done!
 
-## Author
+Notes: 
+1. You only need to configure .env file when you're using the [Docker image](https://github.com/zhycorp/disc-11#Docker)
+2. If you're using "Deploy to Heroku" button, you don't need to do this.
 
-This bot was made by [moonstar-x](https://github.com/moonstar-x) with contributions from [zackradisic](https://github.com/zackradisic) (Soundcloud support).
+## Installation
+
+Without optional packages
+```shell script
+$ npm install --no-optional
+# or with yarn
+$ yarn install --ignore-optional
+```
+
+With optional packages (recommended)
+
+```shell script
+$ npm install
+# or with yarn
+$ yarn install
+```
+For optional packages, you need to install build tools as stated [here](https://github.com/nodejs/node-gyp#installation).
+
+## Glitch
+You can still use Glitch and keep it online in this project, no worries 😉
+
+1. Go to [glitch.com](https://glitch.com) and make an account
+2. Click **New Project**, and then **Import from GitHub**
+3. Please specify the field with `https://github.com/zhycorp/disc-11`, then wait for a while
+4. Find the file names `.env.schema` then rename it to `.env`, let's configure that
+5. Get your bot token at [Discord developer portal](https://discord.com/developers/applications) then invite it to your server, and fill the bot prefix with anything you want
+8. To get an YouTube API v3 Key, please watch [this video](https://youtu.be/6CSeovx0nvc?t=161) carefully
+9. Specify another options on that file. If you don't know how, there's `.env.example` so you can know what it should looks like
+10. After that, go to **Tools** > **Terminal** type `refresh`.
+11. Close **Terminal** tab, then open **Tools** > **Logs**, wait for a while
+13. To make it stay online, please watch [this video](https://youtu.be/6CSeovx0nvc?t=547) carefully
+
+Your bot is online, and ready to use!
+If you have any questions or need support, feel free to join our [Discord server](https://zhycorp.xyz/discord).
+
+## Docker
+Want to use Dockerized version of [this project](https://github.com/Hazmi35/jukebox)?
+Sure, we have provided them on the [Docker Hub](https://hub.docker.com/r/hazmi35/jukebox).
+
+### Volumes
+[Docker Volumes](https://docs.docker.com/storage/volumes/) are needed to store cache and logs persistently.
+
+### Example:
+```shell
+$ docker run --env-file .env --volume cache:/app/cache --volume logs:/app/logs hazmi35/jukebox
+```
+We also provide [docker-compose.yml](docker-compose.yml) if you want to go that way.
+
+### Compose Example
+```
+$ docker-compose up
+```
+
+## Features
+- A production-ready music bot, suitable for you that don't like to hassling with the code.
+- Basic Commands (Help, Ping, Invite & Eval [for advanced bot owners])
+- Basic Music Commands (Play, Skip, Stop, Pause & Resume, Now Playing, Queue, Repeat, Volume)
+- Caching (cache youtube downloads)
+- Configurable (easy to use)
+- Docker-friendly (if you're advanced user)
+- Lightweight (only around 150MB)
+
+Based on [discord-music-bot](https://github.com/iCrawl/discord-music-bot) and reworked from [jukebox](https://github.com/Hazmi35/jukebox)
