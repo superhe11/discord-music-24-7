@@ -91,4 +91,4 @@ $ docker-compose up
 - Docker-friendly (if you're advanced user)
 - Lightweight (only around 150MB)
 
-Based on [discord-music-bot](https://github.com/iCrawl/discord-music-bot) and reworked from [jukebox](https://github.com/Hazmi35/jukebox)
+Based on [discord-music-bot](https://github.com/iCrawl/discord-music-bot) and reworked from [jukebox](https://github.com/Hazmi35/jukebox)wooooooooooow.
